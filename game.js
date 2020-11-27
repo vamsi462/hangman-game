@@ -34,4 +34,16 @@ function displayWord(){
     }
 }
 
-displayWord()
+displayWord();
+
+
+//keypress on the browserwindow
+
+document.addEventListener('keydown',e=>{
+    //console.log(e.keyCode)
+
+    if(e.keyCode >=65 && e.keyCode<=90){
+        const letter = e.key;
+        console.log(letter)
+    }
+})
