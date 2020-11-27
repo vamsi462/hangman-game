@@ -11,7 +11,7 @@ const  figureParts = document.querySelectorAll('.figure-part')
 const words = ['programming','styling','command','javascript','react','redux','mongoose']
 let selectedWord = words[Math.floor(Math.random()*words.length)];
 
-const correctLetters =['y','m','i'];
+const correctLetters =[];
 const wrongLetters =[];
 
 //shows hidden word
@@ -28,7 +28,10 @@ function displayWord(){
         }
         `
     const innerWord = wordEl.innerText.replace(/\n/g,'')
-    console.log(innerWord)
+    if(innerWord===selectedWord){
+        finalMessage.innerText ='Hey!! congratulations you have won!';
+        popup.style.display='flex'
+    }
 }
 
 displayWord()
