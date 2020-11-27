@@ -30,13 +30,23 @@ function displayWord(){
     const innerWord = wordEl.innerText.replace(/\n/g,'')
     if(innerWord===selectedWord){
         finalMessage.innerText ='Hey!! congratulations you have won!';
-        popup.style.display='flex'
+        popup.style.display='flex' 
     }
 }
 
 displayWord();
 
+function updateWrongLetters(){
+    console.log('wrong')
+}
+//show notification
+function showNotifcation(){
+    notification.classList.add('show');
 
+    setTimeout(()=>{
+    notification.classList.remove('show')
+    },2000)
+}
 //keypress on the browserwindow
 
 document.addEventListener('keydown',e=>{
