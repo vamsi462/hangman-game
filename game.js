@@ -8,7 +8,7 @@ const  figureParts = document.querySelectorAll('.figure-part')
 
 
 
-const words = ['programming','styling','command','javascript','react','redux','mongoose']
+const words = ['programming','styling','command','javascript','react','redux','mongoose','algorithm','datastructure','git']
 let selectedWord = words[Math.floor(Math.random()*words.length)];
 
 const correctLetters =[];
