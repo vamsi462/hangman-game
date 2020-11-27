@@ -37,7 +37,23 @@ function displayWord(){
 displayWord();
 
 function updateWrongLetters(){
-    console.log('wrong')
+
+   wrongLetterEl.innerHTML =`
+        ${wrongLetters.length>0 ? '<p>WrongLetters</p>':''}
+        ${wrongLetters.map(letter=>`<span>${letter}</span>`)}
+
+   `
+
+   //disply figure parts for each wrong letter
+   figureParts.forEach((part,index)=>{
+       const errors = wrongLetters.length;
+       if(index<errors){
+           part.style.display='block'
+       }
+       else{
+           part.style.display='none'
+       }
+   })
 }
 //show notification
 function showNotifcation(){
@@ -67,7 +83,7 @@ document.addEventListener('keydown',e=>{
         else{
             if(!wrongLetters.includes(letter)){
                 wrongLetters.push(letter)
-                //updte wrongletters
+                 updateWrongLetters()
             }
             else{
                 showNotifcation()
