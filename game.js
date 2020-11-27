@@ -55,7 +55,7 @@ function updateWrongLetters(){
 
 
    if(figureParts.length===wrongLetters.length){
-       finalMessage.innerText='Sorry!! You Lost.';
+       finalMessage.innerText='Unfortunately!! You Lost.';
        popup.style.display ='flex'
 
    }
@@ -96,4 +96,14 @@ document.addEventListener('keydown',e=>{
             }
         }
     }   
+})
+
+playBtn.addEventListener('click',()=>{
+    wrongLetters.splice(0);
+    correctLetters.splice(0);
+    selectedWord = words[Math.floor(Math.random()*words.length)];
+    displayWord();
+
+    updateWrongLetters();
+    popup.style.display ='none'
 })
