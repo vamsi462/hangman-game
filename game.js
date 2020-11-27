@@ -34,19 +34,17 @@ function displayWord(){
     }
 }
 
-displayWord();
+displayWord()
 
 function updateWrongLetters(){
-
    wrongLetterEl.innerHTML =`
         ${wrongLetters.length>0 ? '<p>WrongLetters</p>':''}
         ${wrongLetters.map(letter=>`<span>${letter}</span>`)}
 
    `
-
    //disply figure parts for each wrong letter
    figureParts.forEach((part,index)=>{
-       const errors = wrongLetters.length;
+       const errors = wrongLetters.length
        if(index<errors){
            part.style.display='block'
        }
@@ -54,7 +52,15 @@ function updateWrongLetters(){
            part.style.display='none'
        }
    })
+
+
+   if(figureParts.length===wrongLetters.length){
+       finalMessage.innerText='Sorry!! You Lost.';
+       popup.style.display ='flex'
+
+   }
 }
+
 //show notification
 function showNotifcation(){
     notification.classList.add('show');
