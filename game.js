@@ -1,0 +1,6 @@
+const  wordEl = document.getElementById('word')
+const  wrongLetterEl = document.getElementById('wrong-letters')
+const  playBtn =  document.getElementById('play-button')
+const  popup =  document.getElementById('popup-container')
+const notification =  document.getElementById('notification-container')
+const finalMessage =  document.getElementById('final-message')
